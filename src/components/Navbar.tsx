@@ -7,7 +7,7 @@ import type { EditorSettings } from '../types'
 import { useStore } from '../store/useStore'
 import { LANGUAGE_MAP } from '../constants'
 import { saveAs } from 'file-saver'
-import { executeCode } from '../.gitignore/api/executor'
+import { executeCode } from '../api/executor'
 
 /* ---------- DOWNLOAD MODAL ---------- */
 function DownloadModal({ onClose }: { onClose: () => void }) {
@@ -68,7 +68,7 @@ function ShareModal({ onClose }: { onClose: () => void }) {
   const [copied, setCopied] = useState(false)
 
   const encoded = btoa(unescape(encodeURIComponent(code))).slice(0, 4096)
-  const url = `${window.location.origin}?lang=${languageKey}&code=${encoded}`
+  const url = `${window.location.protocol}//${window.location.host}${window.location.pathname}?lang=${languageKey}&code=${encoded}`
 
   const copy = () => {
     navigator.clipboard.writeText(url)
