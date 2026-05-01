@@ -9,7 +9,7 @@
  *   math, random, datetime, sys, os, time, json, re, collections, itertools
  */
 
-import { ExecutionResult, TerminalLine } from '../../types'
+import { ExecutionResult, TerminalLine } from '../types'
 
 // ---------------------------------------------------------------------------
 // Shared-buffer protocol
